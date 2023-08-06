@@ -1,0 +1,13 @@
+body {
+  width: 100vw;
+  background-color: blanchedalmond;
+}
+
+/* 
+navbar properties 
+*/
+
+.navbar-body {
+  height: 10vh;
+  background-color: white;
+}

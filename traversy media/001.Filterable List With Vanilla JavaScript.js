@@ -15,7 +15,6 @@ for (let i = 65; i <= 90; i++) {
     const contactsdataForSpecificLetter = document.createElement("div")
     contactsdataForSpecificLetter.classList.add("contacts-data-for-specific-letter")
     const collectionIteams = getDataForSpecifiedLetter(String.fromCharCode(i))
-    getDataForSpecifiedLetter(String.fromCharCode(i))
     contactsdataForSpecificLetter.appendChild(collectionIteams)
     collection.appendChild(contactsdataForSpecificLetter)
 

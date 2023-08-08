@@ -12,6 +12,7 @@ function navbar() {
     navbar.classList.add("navbar-body")
 
 
+
     window.addEventListener('resize', adjustNavSize);
     function adjustNavSize() {
         const screenWidth = window.innerWidth;

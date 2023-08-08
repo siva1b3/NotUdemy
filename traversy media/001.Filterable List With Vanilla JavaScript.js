@@ -34,3 +34,13 @@ function getDataForSpecifiedLetter(specifiedLetter) {
     }
     return collection
 }
+
+// get input element
+const input = document.querySelector("#filter-contacts")
+
+// add event listerners
+input.addEventListener("keyup", filterContacts)
+
+function filterContacts(event) {
+    console.log(event.target.value.toUpperCase())
+}

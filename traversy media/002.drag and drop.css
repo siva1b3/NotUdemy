@@ -1,0 +1,25 @@
+body {
+  background-color: darksalmon;
+}
+
+.fill {
+  background-image: url("https://source.unsplash.com/random/150x150");
+  position: relative;
+  height: 150px;
+  width: 150px;
+  cursor: pointer;
+  border: 3px black solid;
+}
+
+.empty {
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  margin: 15px;
+  background-color: bisque;
+  box-sizing: content-box;
+}
+
+.dragging {
+  opacity: 0.5;
+}

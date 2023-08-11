@@ -93,6 +93,16 @@ function loadThePageWithFilterdContacts(inputValue) {
 
         let contactsdataForSpecificLetter = startsWithFilterCollectionItems(String.fromCharCode(i), inputValue)
         hiddenCollection.lastChild.appendChild(contactsdataForSpecificLetter)
+        const listOfContactsContainer = hiddenCollection.querySelector(`#${String.fromCharCode(i)}-id`)
+        if (listOfContactsContainer !== null) {
+            const listOfContacts = listOfContactsContainer.firstChild.children
+            if (listOfContacts.length === 0) {
+                hiddenCollection.lastChild.innerHTML = "<h2 style='color:red'>NONE</h2>"
+            }
+        }
+        else {
+            hiddenCollection.lastChild.remove()
+        }
 
         collectionHeader = createCollectionHeader(String.fromCharCode(i), "display-inherit")
         collection.appendChild(document.createElement("h1"))
@@ -127,6 +137,7 @@ function startsWithFilterCollectionItems(charRecived, inputValue) {
 
         const contactsdataForSpecificLetter = document.createElement("div")
         contactsdataForSpecificLetter.classList.add("contacts-data-for-specific-letter")
+        contactsdataForSpecificLetter.setAttribute("id", `${charRecived}-id`)
         const collectionIteams = startsWithFilteredDataForSpecifiedLetter(charRecived, inputValue)
         contactsdataForSpecificLetter.appendChild(collectionIteams)
         return contactsdataForSpecificLetter

@@ -9,6 +9,7 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: wheat;
+  box-sizing: border-box;
 }
 
 .header {
@@ -34,16 +35,39 @@ body {
   display: inline;
 }
 
-.couponcode:hover .coupontooltip {
-  display: block;
+/* .btn-outline-success:hover,
+.btn-outline-secondary:hover,
+.btn-outline-info:hover,
+.btn-outline-dark:hover,
+.btn-outline-warning:hover,
+.btn-outline-primary:hover {
+  color: var(--bs-btn-hover-bg);
+  background-color: var(--bs-btn-hover-color);
+  border-color: var(--bs-btn-hover-border-color);
+  font-weight: bolder;
+} */
+
+.btn-outline-success,
+.btn-outline-secondary,
+.btn-outline-info,
+.btn-outline-dark,
+.btn-outline-warning,
+.btn-outline-primary {
+  font-weight: bolder;
 }
 
-.coupontooltip {
-  display: none;
-  padding: 10px;
-  border-radius: 1em;
-  position: absolute;
-  z-index: 1;
-  width: fit-content;
-  height: fit-content;
+.first-click:hover {
+  background-color: white;
+  color: var(--bs-btn-hover-bg);
+}
+
+.with-outline:hover {
+  background-color: var(--bs-btn-hover-bg);
+  color: white;
+}
+
+.without-outline:hover {
+  color: var(--bs-btn-hover-bg);
+  background-color: white;
+  font-weight: bolder;
 }

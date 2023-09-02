@@ -7,11 +7,12 @@
   "private": true,
   "dependencies": {
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "styled-components": "^6.0.7"
   },
   "devDependencies": {
-    "@babel/runtime": "7.13.8",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/runtime": "7.13.8",
     "react-scripts": "latest"
   },
   "scripts": {
@@ -21,11 +22,7 @@
     "eject": "react-scripts eject"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

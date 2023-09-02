@@ -1,7 +1,7 @@
-import React from 'react';
-import './BarChart.css'; // Assuming you have a CSS file for styles
-import HomesFilter from './Homes';
-import AgeCheckBoxes from './Age';
+import React from "react";
+import "./BarChart.css"; // Assuming you have a CSS file for styles
+import HomesFilter from "./Topfilters/Homes";
+import AgeCheckBoxes from "./Topfilters/Age";
 
 function BarChart(props) {
   function sendNewJsonToApp(Key, Value) {

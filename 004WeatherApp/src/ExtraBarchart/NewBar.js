@@ -1,5 +1,5 @@
-import React from 'react';
-import { __DATA__ } from './Data';
+import React from "react";
+import { __DATA__ } from "./Data";
 import {
   MainContainer,
   Container,
@@ -7,7 +7,7 @@ import {
   Number,
   BlackLine,
   MakeBar,
-} from './styles';
+} from "./styles";
 
 export default function App01() {
   return (

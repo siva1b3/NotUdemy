@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
-import './App.css';
-import BarChart from './Bar';
-import App01 from './NewBar';
-import RandomiseValue from './Random';
+import React, { useState } from "react";
+import "./App.css";
+import BarChart from "./Bar";
+import App01 from "./ExtraBarchart/NewBar";
+import RandomiseValue from "./Data/Random";
 
 export default function App() {
   const [stateOfFiltersJson, setStateOfFiltersJson] = useState({
-    Homes: 'All placements',
-    Age: ['0-3', '4-6', '7-12', '13-15', '16-Above'],
+    Homes: "All placements",
+    Age: ["0-3", "4-6", "7-12", "13-15", "16-Above"],
   });
 
   const RandomValuesJson = RandomiseValue();
 
   function changesInJson(Key, Value) {
-    if (Key === 'Homes') {
+    if (Key === "Homes") {
       setStateOfFiltersJson((prevState) => {
         return { ...prevState, Homes: Value };
       });
-    } else if (Key === 'Age') {
+    } else if (Key === "Age") {
       setStateOfFiltersJson((prevState) => {
         return { ...prevState, Age: Value };
       });
     }
     console.log(stateOfFiltersJson);
-    console.log('hi in app');
+    console.log("hi in app");
   }
 
   // {
@@ -38,7 +38,7 @@ export default function App() {
   // }
 
   const filteredjson = RandomValuesJson.filter((item) => {
-    return item['Homes'] === stateOfFiltersJson['Homes'];
+    return item["Homes"] === stateOfFiltersJson["Homes"];
   });
   const k = filteredjson.slice(0, 5);
 

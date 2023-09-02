@@ -37,6 +37,25 @@ export default function App() {
   //    "id":78
   // }
 
+  // Age: ["", "0-3", "13-15", "16-above", "4-6", "7-12"],
+  // Gender: ["", "FeMale", "Male", "Others", "TG F To M", "TG M To F"],
+  // Homes: ["All placements", "", "Home Needs"],
+  // PlacementType: ["APA", "", "Foster", "KinShip", "Resedential", "Unknown"],
+  // Race: [
+  //   "American Indian/Alsakan",
+  //   "Asian",
+  //   "Black",
+  //   "Black/ African American",
+  //   "",
+  //   "Hispanic",
+  //   "Multi Racial",
+  //   "Native American",
+  //   "Other/NA",
+  //   "White",
+  //   "White/Hispanic",
+  // ],
+  // Region: ["", "West", "Wichita"],
+
   let filteredjson;
 
   filteredjson = RandomValuesJson.filter((item) => {
@@ -48,6 +67,10 @@ export default function App() {
   if (filteredjson.length === 0) {
     console.log("empty array");
   }
+  const sumOfValues = filteredjson.data.reduce((accumulator, currentValue) => {
+    return accumulator + parseInt(currentValue.Value);
+  }, 0);
+  console.log(sumOfValues);
   const k = filteredjson.slice(0, 5);
 
   return (
@@ -57,6 +80,7 @@ export default function App() {
         changesInJson={changesInJson}
         filteredjson={filteredjson}
       />
+      {sumOfValues}
       {k.map((item, index) => {
         return <p key={index}>{JSON.stringify(item)}</p>;
       })}

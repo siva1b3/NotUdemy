@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 
 function AgeCheckBoxes(props) {
-  const [listOfAgesSelected, setListOfAgesSelected] = useState([
-    '0-3',
-    '4-6',
-    '7-12',
-    '13-15',
-    '16-Above',
-  ]);
+  const [listOfAgesSelected, setAgeGroups] = useState(
+    props.stateOfFiltersJson["Age"]
+  );
 
   const checkboxes = {
     checkbox1: false,
@@ -17,45 +13,59 @@ function AgeCheckBoxes(props) {
     checkbox5: false,
   };
 
-  if (listOfAgesSelected.includes('0-3')) {
+  if (listOfAgesSelected.includes("0-3") === true) {
     checkboxes.checkbox1 = true;
   }
-  if (listOfAgesSelected.includes('4-6')) {
+  if (listOfAgesSelected.includes("4-6") === true) {
     checkboxes.checkbox2 = true;
   }
-  if (listOfAgesSelected.includes('7-12')) {
+  if (listOfAgesSelected.includes("7-12") === true) {
     checkboxes.checkbox3 = true;
   }
-  if (listOfAgesSelected.includes('13-15')) {
+  if (listOfAgesSelected.includes("13-15") === true) {
     checkboxes.checkbox4 = true;
   }
-  if (listOfAgesSelected.includes('16-Above')) {
+  if (listOfAgesSelected.includes("16-Above") === true) {
     checkboxes.checkbox5 = true;
   }
+
+  function updateSelectedAgesList(checked, ageGroup) {
+    // Assume setAgeGroups is an async function
+    setAgeGroups((prevAgeGroups) => {
+      if (checked === true) {
+        // Add the ageGroup to the previous state
+        return [...prevAgeGroups, ageGroup];
+      } else {
+        // Remove the ageGroup from the previous state
+        return prevAgeGroups.filter((Group) => Group !== ageGroup);
+      }
+    });
+  }
+
+  // Use useEffect to send the updated listOfAgesSelected
+  useEffect(() => {
+    setTimeout(() => {
+      // Call sendNewJsonToApp with the updated listOfAgesSelected
+      props.sendNewJsonToApp("Age", listOfAgesSelected);
+    }, 300);
+  }, [listOfAgesSelected]);
 
   // Function to handle checkbox changes
   const handleCheckboxChange = (event) => {
     const { name, checked } = event.target;
     console.log(name, checked);
     // Call a function or perform actions based on checkbox changes here
-    if (name === 'checkbox1') {
-      console.log(name);
-      console.log('hi');
-      if (checked === true) {
-        setListOfAgesSelected((prevState) => prevState.push('0-3'));
-      } else {
-        setListOfAgesSelected((prevState) => prevState.pop('0-3'));
-      }
+    if (name === "checkbox1") {
+      updateSelectedAgesList(checked, "0-3");
+    } else if (name === "checkbox2") {
+      updateSelectedAgesList(checked, "4-6");
+    } else if (name === "checkbox3") {
+      updateSelectedAgesList(checked, "7-12");
+    } else if (name === "checkbox4") {
+      updateSelectedAgesList(checked, "13-15");
+    } else if (name === "checkbox5") {
+      updateSelectedAgesList(checked, "16-Above");
     }
-    // } else if (name === 'checkbox2') {
-    //   // Do something when checkbox2 changes
-    // } else if (name === 'checkbox3') {
-    //   // Do something when checkbox2 changes
-    // } else if (name === 'checkbox4') {
-    //   // Do something when checkbox2 changes
-    // } else if (name === 'checkbox5') {
-    //   // Do something when checkbox2 changes
-    // }
   };
 
   return (

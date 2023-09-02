@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import BarChart from "./Bar";
+import BarChart from "./Layout/Bar";
 import App01 from "./ExtraBarchart/NewBar";
 import RandomiseValue from "./Data/Random";
 

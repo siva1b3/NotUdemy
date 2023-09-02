@@ -1,4 +1,4 @@
-import jsonData from './DataJson.json';
+import jsonData from "./DataJson.json";
 
 function RandomiseValue() {
   function getRandomInt(min, max) {
@@ -16,7 +16,7 @@ function RandomiseValue() {
     entry.id = index;
   });
 
-  console.log(items.slice(0, 10));
+  // console.log(items.slice(0, 10));
   // console.log(Array.isArray(items));
   return items;
 }

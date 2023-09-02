@@ -5,6 +5,8 @@ import AgeCheckBoxes from "./Topfilters/Age";
 
 function BarChart(props) {
   function sendNewJsonToApp(Key, Value) {
+    console.log("in bar");
+    console.log(Value);
     props.changesInJson(Key, Value);
   }
 
@@ -18,7 +20,10 @@ function BarChart(props) {
           />
         </div>
         <div className="filter Age">
-          <AgeCheckBoxes stateOfFiltersJson={props.stateOfFiltersJson} />
+          <AgeCheckBoxes
+            stateOfFiltersJson={props.stateOfFiltersJson}
+            sendNewJsonToApp={sendNewJsonToApp}
+          />
         </div>
         <div className="filter Region"></div>
         <div className="filter gender"></div>

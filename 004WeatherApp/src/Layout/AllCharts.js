@@ -1,7 +1,8 @@
 import React from "react";
-import "./BarChart.css"; // Assuming you have a CSS file for styles
+import "./AllCharts.css"; // Assuming you have a CSS file for styles
 import HomesFilter from "./Topfilters/Homes";
 import AgeCheckBoxes from "./Topfilters/Age";
+import ChartsCollection from "./AllCharts/ChartsCollection";
 
 function BarChart(props) {
   function sendNewJsonToApp(Key, Value) {
@@ -30,14 +31,7 @@ function BarChart(props) {
         <div className="filter race"></div>
         <div className="filter PlacementType"></div>
       </div>
-      <div className="charts">
-        <div className="chart"></div>
-        <div className="chart"></div>
-        <div className="chart"></div>
-        <div className="chart"></div>
-        <div className="chart"></div>
-        <div className="chart"></div>
-      </div>
+      <ChartsCollection />
       <div className="emptyPlaceInBottom"></div>
     </div>
   );

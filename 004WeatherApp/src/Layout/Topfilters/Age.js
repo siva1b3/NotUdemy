@@ -25,7 +25,7 @@ function AgeCheckBoxes(props) {
   if (listOfAgesSelected.includes("13-15") === true) {
     checkboxes.checkbox4 = true;
   }
-  if (listOfAgesSelected.includes("16-Above") === true) {
+  if (listOfAgesSelected.includes("16-above") === true) {
     checkboxes.checkbox5 = true;
   }
 
@@ -64,7 +64,7 @@ function AgeCheckBoxes(props) {
     } else if (name === "checkbox4") {
       updateSelectedAgesList(checked, "13-15");
     } else if (name === "checkbox5") {
-      updateSelectedAgesList(checked, "16-Above");
+      updateSelectedAgesList(checked, "16-above");
     }
   };
 
@@ -117,7 +117,7 @@ function AgeCheckBoxes(props) {
           checked={checkboxes.checkbox5}
           onChange={handleCheckboxChange}
         />
-        '16-Above'
+        '16-above'
       </label>
     </div>
   );

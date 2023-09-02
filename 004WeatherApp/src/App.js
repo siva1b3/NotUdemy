@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
-import BarChart from "./Layout/Bar";
+import BarChart from "./Layout/AllCharts";
 import App01 from "./ExtraBarchart/NewBar";
 import RandomiseValue from "./Data/Random";
 
 export default function App() {
   const [stateOfFiltersJson, setStateOfFiltersJson] = useState({
     Homes: "All placements",
-    Age: ["0-3", "4-6", "7-12", "13-15", "16-Above"],
+    Age: ["0-3", "4-6", "7-12", "13-15", "16-above"],
   });
 
   const RandomValuesJson = RandomiseValue();
@@ -37,9 +37,17 @@ export default function App() {
   //    "id":78
   // }
 
-  const filteredjson = RandomValuesJson.filter((item) => {
+  let filteredjson;
+
+  filteredjson = RandomValuesJson.filter((item) => {
     return item["Homes"] === stateOfFiltersJson["Homes"];
   });
+  filteredjson = filteredjson.filter((item) => {
+    return stateOfFiltersJson["Age"].includes(item["Age"]);
+  });
+  if (filteredjson.length === 0) {
+    console.log("empty array");
+  }
   const k = filteredjson.slice(0, 5);
 
   return (
@@ -47,6 +55,7 @@ export default function App() {
       <BarChart
         stateOfFiltersJson={stateOfFiltersJson}
         changesInJson={changesInJson}
+        filteredjson={filteredjson}
       />
       {k.map((item, index) => {
         return <p key={index}>{JSON.stringify(item)}</p>;

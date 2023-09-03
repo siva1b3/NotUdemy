@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
 import BarChart from "./Layout/AllCharts";
-import App01 from "./ExtraBarchart/NewBar";
-import RandomiseValue from "./Data/Random";
-import FilterJSONData from "./Layout/Filterdata/FilterData";
+// import App01 from "./ExtraBarchart/NewBar";
+// import RandomiseValue from "./Data/Random";
+// import FilterJSONData from "./Layout/Filterdata/FilterData";
 
 export default function App() {
   const [stateOfFiltersJson, setStateOfFiltersJson] = useState({
@@ -28,27 +28,22 @@ export default function App() {
     }
   }
 
-  // {
-  //   "Homes": "Home Needs",
-  //   "Age": "0-3",
-  //   "Region": "West",
-  //   "Gender": "Male",
-  //   "Race": "American Indian/Alsakan",
-  //   "PlacementType": "Foster",
-  //   "Value": "1",
-  //    "id":78
-  // }
+  function generateRandomNumbers(min, max, count) {
+    const randomNumbers = [];
 
-  let filteredjson = RandomiseValue();
+    for (let i = 0; i < count; i++) {
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      randomNumbers.push(randomNumber);
+    }
 
-  filteredjson = FilterJSONData(filteredjson, stateOfFiltersJson);
+    return randomNumbers;
+  }
 
-  // const sumOfValues = filteredjson.reduce((accumulator, currentValue) => {
-  //   return accumulator + parseInt(currentValue.Value);
-  // }, 0);
-  // console.log(sumOfValues);
-
-  // const k = filteredjson.slice(0, 5);
+  let filteredjson = {
+    AgeLabels: generateRandomNumbers(2000, 3000, 5),
+    Region: generateRandomNumbers(2000, 3000, 2),
+    stateOfFiltersJson: stateOfFiltersJson,
+  };
 
   return (
     <div>
@@ -57,10 +52,6 @@ export default function App() {
         changesInJson={ChangeJSONBasedOnNewValues}
         filteredjson={filteredjson}
       />
-      {/* {sumOfValues}
-      {k.map((item, index) => {
-        return <p key={index}>{JSON.stringify(item)}</p>;
-      })} */}
     </div>
   );
 }

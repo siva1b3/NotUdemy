@@ -42,24 +42,25 @@ export function AgeBarChart(props) {
     },
   };
 
-  const jsonrecived = props.filteredjson;
-  const result = [0, 0, 0, 0, 0];
-
-  jsonrecived.forEach((element) => {
-    const { Age, Value } = element;
-    let indexnumber = Agelabels.indexOf(Age);
-    result[indexnumber] = result[indexnumber] + Value;
-  });
-
-  console.log(result);
-
   const labels = Agelabels;
+  console.log(labels);
+  console.log(typeof labels);
+  console.log(Array.isArray(labels));
+
+  const jsonrecived = props.filteredjson.AgeLabels;
+  const ActiveAgeLabels = props.filteredjson.stateOfFiltersJson.Age;
+  const finaldata = [0, 0, 0, 0, 0];
+  labels.forEach((element, index) => {
+    if (ActiveAgeLabels.includes(element) === true) {
+      finaldata[index] = jsonrecived[index];
+    }
+  });
 
   const data = {
     labels,
     datasets: [
       {
-        data: result,
+        data: finaldata,
         borderColor: "rgb(0, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },

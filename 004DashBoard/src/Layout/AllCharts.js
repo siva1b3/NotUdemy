@@ -7,8 +7,6 @@ import RegionFilter from "./Topfilters/RegionFilter";
 
 function BarChart(props) {
   function sendNewJsonToApp(Key, Value) {
-    // console.log("in bar");
-    // console.log(Value);
     props.changesInJson(Key, Value);
   }
 

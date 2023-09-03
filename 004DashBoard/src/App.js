@@ -3,6 +3,7 @@ import "./App.css";
 import BarChart from "./Layout/AllCharts";
 import App01 from "./ExtraBarchart/NewBar";
 import RandomiseValue from "./Data/Random";
+import FilterJSONData from "./Layout/Filterdata/FilterData";
 
 export default function App() {
   const [stateOfFiltersJson, setStateOfFiltersJson] = useState({
@@ -58,43 +59,8 @@ export default function App() {
   // Region: ["", "West", "Wichita"],
 
   let filteredjson = RandomiseValue();
-  let isEmptyArray = false;
 
-  function HomesFilter(Json) {
-    return Json.filter((item) => {
-      return item["Homes"] === stateOfFiltersJson["Homes"];
-    });
-  }
-  filteredjson = HomesFilter(filteredjson);
-
-  function Agefilter(Json) {
-    return Json.filter((item) => {
-      return stateOfFiltersJson["Age"].includes(item["Age"]);
-    });
-  }
-
-  filteredjson = Agefilter(filteredjson);
-
-  function CheckForEmptyArray(Json) {
-    return Json.length === 0;
-  }
-
-  isEmptyArray = CheckForEmptyArray(filteredjson);
-
-  function RegionFilter(Json) {
-    if (isEmptyArray) {
-      console.log("empty array recived for RegionFilter");
-      return null;
-    }
-    if (stateOfFiltersJson["Region"] === "Both") {
-      return Json;
-    }
-    return Json.filter((item) => {
-      return item["Region"] === stateOfFiltersJson["Region"];
-    });
-  }
-
-  filteredjson = RegionFilter(filteredjson);
+  filteredjson = FilterJSONData(filteredjson, stateOfFiltersJson);
 
   // const sumOfValues = filteredjson.reduce((accumulator, currentValue) => {
   //   return accumulator + parseInt(currentValue.Value);

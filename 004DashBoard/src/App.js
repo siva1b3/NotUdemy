@@ -39,25 +39,6 @@ export default function App() {
   //    "id":78
   // }
 
-  // Age: ["", "0-3", "13-15", "16-above", "4-6", "7-12"],
-  // Gender: ["", "FeMale", "Male", "Others", "TG F To M", "TG M To F"],
-  // Homes: ["All placements", "", "Home Needs"],
-  // PlacementType: ["APA", "", "Foster", "KinShip", "Resedential", "Unknown"],
-  // Race: [
-  //   "American Indian/Alsakan",
-  //   "Asian",
-  //   "Black",
-  //   "Black/ African American",
-  //   "",
-  //   "Hispanic",
-  //   "Multi Racial",
-  //   "Native American",
-  //   "Other/NA",
-  //   "White",
-  //   "White/Hispanic",
-  // ],
-  // Region: ["", "West", "Wichita"],
-
   let filteredjson = RandomiseValue();
 
   filteredjson = FilterJSONData(filteredjson, stateOfFiltersJson);

@@ -47,7 +47,7 @@ function AgeCheckBoxes(props) {
     setTimeout(() => {
       // Call sendNewJsonToApp with the updated listOfAgesSelected
       props.sendNewJsonToApp("Age", listOfAgesSelected);
-    }, 300);
+    }, 100);
   }, [listOfAgesSelected]);
 
   // Function to handle checkbox changes

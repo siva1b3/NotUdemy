@@ -10,51 +10,64 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import "./AgeChart.css";
+import { Age as Agelabels } from "../../Data/Defaultdata";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+export function AgeBarChart(props) {
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend
+  );
 
-export const options = {
-  indexAxis: "y",
-  maintainAspectRatio: false,
-  elements: {
-    bar: {
-      borderWidth: 1,
+  const options = {
+    indexAxis: "y",
+    maintainAspectRatio: false,
+    elements: {
+      bar: {
+        borderWidth: 1,
+      },
     },
-  },
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "top",
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "Age Chart",
+      },
     },
-    title: {
-      display: true,
-      text: "Age Chart",
-    },
-  },
-};
+  };
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
+  const jsonrecived = props.filteredjson;
+  const result = [0, 0, 0, 0, 0];
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: "Dataset 1",
-      data: [1, 2, 3, 4, 5, 6, 7],
-      borderColor: "rgb(0, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
-    },
-  ],
-};
+  jsonrecived.forEach((element) => {
+    console.log(element);
+    const { Age, Value } = element;
+    let indexnumber = Agelabels.indexOf(Age);
+    console.log(result[indexnumber]);
+    console.log(Value);
+    result[indexnumber] = result[indexnumber] + Value;
+  });
 
-export function AgeBarChart() {
+  console.log(result);
+
+  const labels = Agelabels;
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        data: result,
+        borderColor: "rgb(0, 99, 132)",
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+    ],
+  };
   return (
     <div className="chart-container-age">
       <Bar options={options} data={data} id={"siva"} />

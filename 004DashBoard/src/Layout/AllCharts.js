@@ -37,7 +37,7 @@ function BarChart(props) {
         <div className="filter race"></div>
         <div className="filter PlacementType"></div>
       </div>
-      <ChartsCollection />
+      <ChartsCollection filteredjson={props.filteredjson} />
       <div className="emptyPlaceInBottom"></div>
     </div>
   );

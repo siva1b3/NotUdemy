@@ -1,11 +1,11 @@
 import React from "react";
 import { AgeBarChart } from "./AgeChart";
 
-function ChartsCollection() {
+function ChartsCollection(props) {
   return (
     <div className="charts">
       <div className="chart AgeChart">
-        <AgeBarChart />
+        <AgeBarChart filteredjson={props.filteredjson} />
       </div>
       <div className="chart"></div>
       <div className="chart"></div>

@@ -78,7 +78,7 @@ export default function App() {
     RegionLabels: generateRandomNumbers(2000, 3000, 2),
     GenderLables: generateRandomNumbers(2000, 3000, 5),
     RaceLables: generateRandomNumbers(2000, 3000, 10),
-    PlacementTypeLables: generateRandomNumbers(2000, 3000, 5),
+    PlacementTypeLables: generateRandomNumbers(200, 240, 5),
     stateOfFiltersJson: stateOfFiltersJson,
     empty: IsAnyCheckboxGroupIsCompletelyEmpty(stateOfFiltersJson),
   };

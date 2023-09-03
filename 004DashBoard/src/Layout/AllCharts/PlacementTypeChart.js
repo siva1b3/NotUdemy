@@ -3,12 +3,14 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
+  Filler,
   Legend,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import "./AgeChart.css";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { PlacementType as Agelabels } from "../../Data/Defaultdata";
@@ -17,14 +19,15 @@ export function PlacementTypeBarChart(props) {
   ChartJS.register(
     CategoryScale,
     LinearScale,
-    BarElement,
+    PointElement,
+    LineElement,
     Title,
     Tooltip,
+    Filler,
     Legend
   );
 
   const options = {
-    indexAxis: "y",
     maintainAspectRatio: false,
     elements: {
       bar: {
@@ -43,7 +46,7 @@ export function PlacementTypeBarChart(props) {
       datalabels: {
         anchor: "end",
         align: "start",
-        color: "blue",
+        color: "red",
         labels: {
           title: {
             font: {
@@ -66,6 +69,7 @@ export function PlacementTypeBarChart(props) {
         },
       },
       y: {
+        beginAtZero: true,
         ticks: {
           font: {
             size: 14, //this change the font size
@@ -94,15 +98,16 @@ export function PlacementTypeBarChart(props) {
     datasets: [
       {
         label: "Count",
+        fill: true,
         data: finaldata,
-        borderColor: "rgb(0, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "rgb(53, 162, 235)",
+        backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
     ],
   };
   return (
     <div className="chart-container-age">
-      <Bar
+      <Line
         options={options}
         plugins={[ChartDataLabels]}
         data={data}

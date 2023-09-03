@@ -37,7 +37,7 @@ export function RegionChart(props) {
       },
       title: {
         display: true,
-        text: "Age Chart",
+        text: "Region Chart",
       },
       datalabels: {
         anchor: "end",

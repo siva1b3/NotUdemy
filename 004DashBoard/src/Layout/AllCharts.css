@@ -46,7 +46,7 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100vh;
   flex-wrap: wrap;
 }
@@ -62,4 +62,8 @@ body {
 .emptyPlaceInBottom {
   height: calc(0.05 * 100vh);
   box-sizing: border-box;
+}
+
+.officeChart {
+  height: calc(0.7 * 100vh);
 }

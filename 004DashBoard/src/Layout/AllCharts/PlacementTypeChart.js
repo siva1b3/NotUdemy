@@ -41,7 +41,7 @@ export function PlacementTypeBarChart(props) {
       },
       title: {
         display: true,
-        text: "Age Chart",
+        text: "Placement Type Chart",
       },
       datalabels: {
         anchor: "end",

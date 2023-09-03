@@ -38,7 +38,7 @@ export function OfficeBarChart(props) {
       },
       title: {
         display: true,
-        text: "Age Chart",
+        text: "Office Chart",
       },
       datalabels: {
         anchor: "end",

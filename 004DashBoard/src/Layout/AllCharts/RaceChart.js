@@ -38,7 +38,7 @@ export function RaceBarChart(props) {
       },
       title: {
         display: true,
-        text: "Age Chart",
+        text: "Race Chart",
       },
       datalabels: {
         anchor: "end",

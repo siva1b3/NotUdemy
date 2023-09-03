@@ -38,7 +38,7 @@ export function GenderBarChart(props) {
       },
       title: {
         display: true,
-        text: "Age Chart",
+        text: "Gender Chart",
       },
       datalabels: {
         anchor: "end",

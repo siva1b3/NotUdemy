@@ -24,7 +24,7 @@ function ChartsCollection(props) {
       <div className="chart">
         <PlacementTypeBarChart filteredjson={props.filteredjson} />
       </div>
-      <div className="chart">
+      <div className="chart officeChart">
         <OfficeBarChart filteredjson={props.filteredjson} />
       </div>
     </div>

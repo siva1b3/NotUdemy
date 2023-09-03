@@ -9,6 +9,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import "./AgeChart.css";
 
 ChartJS.register(
   CategoryScale,
@@ -21,6 +22,7 @@ ChartJS.register(
 
 export const options = {
   indexAxis: "y",
+  maintainAspectRatio: false,
   elements: {
     bar: {
       borderWidth: 1,
@@ -53,5 +55,9 @@ export const data = {
 };
 
 export function AgeBarChart() {
-  return <Bar options={options} data={data} id={"siva"} />;
+  return (
+    <div className="chart-container-age">
+      <Bar options={options} data={data} id={"siva"} />
+    </div>
+  );
 }

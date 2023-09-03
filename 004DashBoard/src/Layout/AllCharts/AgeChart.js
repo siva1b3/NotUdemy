@@ -10,6 +10,7 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import "./AgeChart.css";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Age as Agelabels } from "../../Data/Defaultdata";
 
 export function AgeBarChart(props) {
@@ -39,18 +40,48 @@ export function AgeBarChart(props) {
         display: true,
         text: "Age Chart",
       },
+      datalabels: {
+        anchor: "end",
+        align: "start",
+        color: "blue",
+        labels: {
+          title: {
+            font: {
+              weight: "bolder",
+            },
+          },
+          value: {
+            color: "black",
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          font: {
+            size: 14, //this change the font size
+            weight: "bolder",
+          },
+        },
+      },
+      y: {
+        ticks: {
+          font: {
+            size: 14, //this change the font size
+            weight: "bolder",
+          },
+        },
+      },
     },
   };
 
-  const labels = Agelabels;
-  console.log(labels);
-  console.log(typeof labels);
-  console.log(Array.isArray(labels));
+  let labels = Agelabels;
 
   const jsonrecived = props.filteredjson.AgeLabels;
   const ActiveAgeLabels = props.filteredjson.stateOfFiltersJson.Age;
-  const finaldata = [0, 0, 0, 0, 0];
-  labels.forEach((element, index) => {
+  const finaldata = [null, null, null, null, null];
+  Agelabels.forEach((element, index) => {
     if (ActiveAgeLabels.includes(element) === true) {
       finaldata[index] = jsonrecived[index];
     }
@@ -60,6 +91,7 @@ export function AgeBarChart(props) {
     labels,
     datasets: [
       {
+        label: "Count",
         data: finaldata,
         borderColor: "rgb(0, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
@@ -68,7 +100,12 @@ export function AgeBarChart(props) {
   };
   return (
     <div className="chart-container-age">
-      <Bar options={options} data={data} id={"siva"} />
+      <Bar
+        options={options}
+        plugins={[ChartDataLabels]}
+        data={data}
+        id={"siva"}
+      />
     </div>
   );
 }

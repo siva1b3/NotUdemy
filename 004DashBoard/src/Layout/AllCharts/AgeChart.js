@@ -46,11 +46,8 @@ export function AgeBarChart(props) {
   const result = [0, 0, 0, 0, 0];
 
   jsonrecived.forEach((element) => {
-    console.log(element);
     const { Age, Value } = element;
     let indexnumber = Agelabels.indexOf(Age);
-    console.log(result[indexnumber]);
-    console.log(Value);
     result[indexnumber] = result[indexnumber] + Value;
   });
 

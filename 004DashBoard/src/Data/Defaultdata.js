@@ -21,3 +21,20 @@ export const Race = [
   "White/Hispanic",
 ];
 export const Region = ["West", "Wichita"];
+export const Office = [
+  "Junction City",
+  "Great Bend",
+  "Wichita",
+  "Hays",
+  "Liberal",
+  "Newton",
+  "Emporia",
+  "Salina",
+  "Colby",
+  "Hutchinson",
+  "Dodge City",
+  "Garden City",
+  "Concordia",
+  "El Dorado",
+  "Wellington",
+];

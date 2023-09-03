@@ -12,7 +12,7 @@ body {
 
 .filtersContiner {
   border: 1px solid #e68383;
-  width: calc(0.95 * 100vw);
+  width: calc(0.97 * 100vw);
   height: calc(0.33 * 100vh);
   margin: 0px auto;
   display: flex;
@@ -27,7 +27,7 @@ body {
 }
 
 .race {
-  flex-basis: 200px;
+  flex-basis: 90px;
 }
 
 .charts {

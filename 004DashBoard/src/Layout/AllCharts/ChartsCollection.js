@@ -3,6 +3,7 @@ import { AgeBarChart } from "./AgeChart";
 import { RegionChart } from "./RegionChart";
 import { GenderBarChart } from "./GenderChart";
 import { RaceBarChart } from "./RaceChart";
+import { PlacementTypeBarChart } from "./PlacementTypeChart";
 
 function ChartsCollection(props) {
   return (
@@ -19,7 +20,9 @@ function ChartsCollection(props) {
       <div className="chart">
         <RaceBarChart filteredjson={props.filteredjson} />
       </div>
-      <div className="chart"></div>
+      <div className="chart">
+        <PlacementTypeBarChart filteredjson={props.filteredjson} />
+      </div>
       <div className="chart"></div>
     </div>
   );

@@ -20,6 +20,7 @@ export default function App() {
       "White",
       "White/Hispanic",
     ],
+    PlacementType: ["APA", "Foster", "KinShip", "Resedential", "Unknown"],
   });
 
   function ChangeJSONBasedOnNewValues(Key, Value) {
@@ -43,6 +44,10 @@ export default function App() {
       setStateOfFiltersJson((prevState) => {
         return { ...prevState, Race: Value };
       });
+    } else if (Key === "PlacementType") {
+      setStateOfFiltersJson((prevState) => {
+        return { ...prevState, PlacementType: Value };
+      });
     }
   }
 
@@ -54,6 +59,8 @@ export default function App() {
     minlength.push(Gender);
     let Race = Json.Race.length;
     minlength.push(Race);
+    let PlacementType = Json.PlacementType.length;
+    minlength.push(PlacementType);
     return Math.min(...minlength) === 0;
   }
 
@@ -71,6 +78,7 @@ export default function App() {
     RegionLabels: generateRandomNumbers(2000, 3000, 2),
     GenderLables: generateRandomNumbers(2000, 3000, 5),
     RaceLables: generateRandomNumbers(2000, 3000, 10),
+    PlacementTypeLables: generateRandomNumbers(2000, 3000, 5),
     stateOfFiltersJson: stateOfFiltersJson,
     empty: IsAnyCheckboxGroupIsCompletelyEmpty(stateOfFiltersJson),
   };

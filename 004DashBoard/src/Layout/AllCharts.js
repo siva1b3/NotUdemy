@@ -4,6 +4,8 @@ import HomesFilter from "./Topfilters/Homes";
 import AgeCheckBoxes from "./Topfilters/Age";
 import ChartsCollection from "./AllCharts/ChartsCollection";
 import RegionFilter from "./Topfilters/RegionFilter";
+import GenderCheckBoxes from "./Topfilters/Gender";
+import RaceCheckBoxes from "./Topfilters/Race";
 
 function BarChart(props) {
   function sendNewJsonToApp(Key, Value) {
@@ -31,9 +33,20 @@ function BarChart(props) {
             stateOfFiltersJson={props.stateOfFiltersJson}
           />
         </div>
-        <div className="filter gender"></div>
-        <div className="filter race"></div>
+        <div className="filter gender">
+          <GenderCheckBoxes
+            sendNewJsonToApp={sendNewJsonToApp}
+            stateOfFiltersJson={props.stateOfFiltersJson}
+          />
+        </div>
+        <div className="filter race">
+          <RaceCheckBoxes
+            sendNewJsonToApp={sendNewJsonToApp}
+            stateOfFiltersJson={props.stateOfFiltersJson}
+          />
+        </div>
         <div className="filter PlacementType"></div>
+        <div className="filter office"></div>
       </div>
       <ChartsCollection filteredjson={props.filteredjson} />
       <div className="emptyPlaceInBottom"></div>

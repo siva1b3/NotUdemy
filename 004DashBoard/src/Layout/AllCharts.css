@@ -13,16 +13,21 @@ body {
 .filtersContiner {
   border: 1px solid #e68383;
   width: calc(0.95 * 100vw);
-  height: calc(0.25 * 100vh);
+  height: calc(0.33 * 100vh);
   margin: 0px auto;
   display: flex;
   justify-content: flex-start;
 }
 
 .filter {
-  flex: 1 1 15%;
   border: 1px solid red;
   width: fit-content;
+  flex-basis: 150px;
+  flex: 1;
+}
+
+.race {
+  flex-basis: 200px;
 }
 
 .charts {
@@ -39,9 +44,9 @@ body {
 
 .chart {
   border: 1px solid #333;
-  width: calc(0.3 * 100vw);
-  height: calc(0.45 * 100vh);
-  margin: calc(0.1 * 100vh / 3) calc(0.08 * 100vw / 6);
+  width: calc(0.32 * 100vw);
+  height: calc(0.48 * 100vh);
+  margin: calc(0.01 * 100vh / 3) calc(0.025 * 100vw / 6);
   box-sizing: border-box;
 }
 

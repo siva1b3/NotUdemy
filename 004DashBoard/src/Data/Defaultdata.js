@@ -1,5 +1,5 @@
 export const Age = ["0-3", "4-6", "7-12", "13-15", "16-above"];
-export const Gender = ["FeMale", "Male", "Others", "TG F To M", "TG M To F"];
+export const Gender = ["FeMale", "Male", "TG F To M", "TG M To F", "Others"];
 export const Homes = ["All placements", "Home Needs"];
 export const PlacementType = [
   "APA",

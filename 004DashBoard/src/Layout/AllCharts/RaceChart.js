@@ -11,9 +11,9 @@ import {
 import { Bar } from "react-chartjs-2";
 import "./AgeChart.css";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-import { Age as Agelabels } from "../../Data/Defaultdata";
+import { Race as Agelabels } from "../../Data/Defaultdata";
 
-export function AgeBarChart(props) {
+export function RaceBarChart(props) {
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -60,7 +60,7 @@ export function AgeBarChart(props) {
       x: {
         ticks: {
           font: {
-            size: 14, //this change the font size
+            // size: 14, //this change the font size
             weight: "bolder",
           },
         },
@@ -68,7 +68,7 @@ export function AgeBarChart(props) {
       y: {
         ticks: {
           font: {
-            size: 14, //this change the font size
+            // size: 14, //this change the font size
             weight: "bolder",
           },
         },
@@ -78,9 +78,20 @@ export function AgeBarChart(props) {
 
   let labels = Agelabels;
 
-  const jsonrecived = props.filteredjson.AgeLabels;
-  const ActiveAgeLabels = props.filteredjson.stateOfFiltersJson.Age;
-  const finaldata = [null, null, null, null, null];
+  const jsonrecived = props.filteredjson.RaceLables;
+  const ActiveAgeLabels = props.filteredjson.stateOfFiltersJson.Race;
+  const finaldata = [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ];
   if (props.filteredjson.empty === false) {
     Agelabels.forEach((element, index) => {
       if (ActiveAgeLabels.includes(element) === true) {

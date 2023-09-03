@@ -11,20 +11,19 @@ import {
 import { Bar } from "react-chartjs-2";
 import "./AgeChart.css";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-import { Age as Agelabels } from "../../Data/Defaultdata";
+import { Region as Regionlabels } from "../../Data/Defaultdata";
 
-export function AgeBarChart(props) {
-  ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend
-  );
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
+export function RegionChart(props) {
   const options = {
-    indexAxis: "y",
     maintainAspectRatio: false,
     elements: {
       bar: {
@@ -76,17 +75,20 @@ export function AgeBarChart(props) {
     },
   };
 
-  let labels = Agelabels;
-
-  const jsonrecived = props.filteredjson.AgeLabels;
-  const ActiveAgeLabels = props.filteredjson.stateOfFiltersJson.Age;
-  const finaldata = [null, null, null, null, null];
+  let labels = Regionlabels;
+  const ActiveLables = props.filteredjson.stateOfFiltersJson.Region;
+  const jsonrecived = props.filteredjson.RegionLabels;
+  let finaldata = [null, null];
   if (props.filteredjson.empty === false) {
-    Agelabels.forEach((element, index) => {
-      if (ActiveAgeLabels.includes(element) === true) {
-        finaldata[index] = jsonrecived[index];
-      }
-    });
+    if (ActiveLables === "Both") {
+      finaldata = jsonrecived;
+    } else if (ActiveLables === "West") {
+      finaldata = [jsonrecived[0]];
+      labels = [Regionlabels[0]];
+    } else if (ActiveLables === "Wichita") {
+      finaldata = [jsonrecived[1]];
+      labels = [Regionlabels[1]];
+    }
   }
 
   const data = {
@@ -100,13 +102,14 @@ export function AgeBarChart(props) {
       },
     ],
   };
+
   return (
     <div className="chart-container-age">
       <Bar
         options={options}
         plugins={[ChartDataLabels]}
         data={data}
-        id={"Age Data"}
+        id={"Region"}
       />
     </div>
   );

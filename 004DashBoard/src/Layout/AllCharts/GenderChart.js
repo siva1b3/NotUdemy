@@ -11,9 +11,9 @@ import {
 import { Bar } from "react-chartjs-2";
 import "./AgeChart.css";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-import { Age as Agelabels } from "../../Data/Defaultdata";
+import { Gender as Agelabels } from "../../Data/Defaultdata";
 
-export function AgeBarChart(props) {
+export function GenderBarChart(props) {
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -78,8 +78,8 @@ export function AgeBarChart(props) {
 
   let labels = Agelabels;
 
-  const jsonrecived = props.filteredjson.AgeLabels;
-  const ActiveAgeLabels = props.filteredjson.stateOfFiltersJson.Age;
+  const jsonrecived = props.filteredjson.GenderLables;
+  const ActiveAgeLabels = props.filteredjson.stateOfFiltersJson.Gender;
   const finaldata = [null, null, null, null, null];
   if (props.filteredjson.empty === false) {
     Agelabels.forEach((element, index) => {

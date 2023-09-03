@@ -28,10 +28,14 @@ function FilterJSONData(filteredjson, stateOfFiltersJson) {
 
   filteredjson = HomesFilter(filteredjson, stateOfFiltersJson);
   filteredjson = Agefilter(filteredjson, stateOfFiltersJson);
+
   isEmptyArray = CheckForEmptyArray(filteredjson, stateOfFiltersJson);
   if (!isEmptyArray) {
     filteredjson = RegionFilter(filteredjson, stateOfFiltersJson);
   }
+
   isEmptyArray = CheckForEmptyArray(filteredjson, stateOfFiltersJson);
+
+  return filteredjson;
 }
 export default FilterJSONData;

@@ -60,7 +60,7 @@ export function OfficeBarChart(props) {
       x: {
         ticks: {
           font: {
-            // size: 14, //this change the font size
+            size: 14, //this change the font size
             weight: "bolder",
           },
         },
@@ -68,7 +68,8 @@ export function OfficeBarChart(props) {
       y: {
         ticks: {
           font: {
-            size: 10, //this change the font size
+            size: 12, //this change the font size
+            weight: "bold",
           },
         },
       },

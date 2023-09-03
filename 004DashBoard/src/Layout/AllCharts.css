@@ -25,6 +25,7 @@ body {
   width: fit-content;
   flex-basis: 100px;
   flex: 1;
+  flex-wrap: wrap;
 }
 
 .filter label {

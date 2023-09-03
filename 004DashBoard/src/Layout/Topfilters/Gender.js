@@ -42,6 +42,14 @@ function GenderCheckBoxes(props) {
     });
   }
 
+  let AllAreFalse = true;
+  for (let k of Object.values(checkboxes)) {
+    if (k === true) {
+      AllAreFalse = false;
+      break;
+    }
+  }
+
   // Use useEffect to send the updated listOfAgesSelected
   useEffect(() => {
     setTimeout(() => {
@@ -70,6 +78,22 @@ function GenderCheckBoxes(props) {
 
   return (
     <div>
+      {AllAreFalse && (
+        <h4
+          style={{
+            color: "red",
+            margin: "0%",
+            padding: "0%",
+            position: "fixed",
+            backgroundColor: "aquamarine",
+            fontWeight: "bold",
+          }}
+        >
+          Please select at Least
+          <br /> one Gender value
+        </h4>
+      )}
+      {AllAreFalse && <div style={{ height: "40px" }}></div>}
       <label>
         <input
           type="checkbox"

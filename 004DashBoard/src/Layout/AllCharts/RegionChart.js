@@ -42,15 +42,13 @@ export function RegionChart(props) {
       datalabels: {
         anchor: "end",
         align: "start",
-        color: "blue",
         labels: {
-          title: {
+          value: {
+            color: "red",
             font: {
               weight: "bolder",
+              size: 18,
             },
-          },
-          value: {
-            color: "black",
           },
         },
       },
@@ -97,8 +95,8 @@ export function RegionChart(props) {
       {
         label: "Count",
         data: finaldata,
-        borderColor: "rgb(0, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "rgb(53, 162, 235)",
+        backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
     ],
   };

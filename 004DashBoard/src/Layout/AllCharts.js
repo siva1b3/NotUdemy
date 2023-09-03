@@ -3,11 +3,12 @@ import "./AllCharts.css"; // Assuming you have a CSS file for styles
 import HomesFilter from "./Topfilters/Homes";
 import AgeCheckBoxes from "./Topfilters/Age";
 import ChartsCollection from "./AllCharts/ChartsCollection";
+import RegionFilter from "./Topfilters/RegionFilter";
 
 function BarChart(props) {
   function sendNewJsonToApp(Key, Value) {
-    console.log("in bar");
-    console.log(Value);
+    // console.log("in bar");
+    // console.log(Value);
     props.changesInJson(Key, Value);
   }
 
@@ -26,7 +27,12 @@ function BarChart(props) {
             sendNewJsonToApp={sendNewJsonToApp}
           />
         </div>
-        <div className="filter Region"></div>
+        <div className="filter Region">
+          <RegionFilter
+            sendNewJsonToApp={sendNewJsonToApp}
+            stateOfFiltersJson={props.stateOfFiltersJson}
+          />
+        </div>
         <div className="filter gender"></div>
         <div className="filter race"></div>
         <div className="filter PlacementType"></div>

@@ -14,9 +14,18 @@ function BarChart(props) {
     props.changesInJson(Key, Value);
   }
 
+  let heightChangeIfJsonisEmpty = {
+    height: "calc(0.25 * 100vh)",
+  };
+  if (props.filteredjson.empty === true) {
+    heightChangeIfJsonisEmpty = {
+      height: "calc(0.3 * 100vh)",
+    };
+  }
+
   return (
     <div>
-      <div className="filtersContiner">
+      <div className="filtersContiner" style={heightChangeIfJsonisEmpty}>
         <div className="filter Homes">
           <HomesFilter
             sendNewJsonToApp={sendNewJsonToApp}

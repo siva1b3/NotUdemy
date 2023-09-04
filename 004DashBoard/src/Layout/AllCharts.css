@@ -40,6 +40,10 @@ body {
   overflow: scroll;
 }
 
+.PlacementType {
+  flex-basis: 40px;
+}
+
 .charts {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;

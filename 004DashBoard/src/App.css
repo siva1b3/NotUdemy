@@ -1,0 +1,4 @@
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 6px 0;
+}

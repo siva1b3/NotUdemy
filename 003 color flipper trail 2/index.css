@@ -1,3 +1,7 @@
+* {
+  outline: 1px solid aquamarine;
+}
+
 body,
 .container-fluid,
 .row {
@@ -11,8 +15,23 @@ body,
 
 .row {
   text-align: center;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 button {
-  width: 100%;
+  width: max-content;
+  height: 28px;
+}
+
+.btn-success {
+  display: inline;
+  flex: 1;
+}
+
+.button-block {
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,6 +1,6 @@
 :root {
-  --ToggleSwitchlength: 80px; /* give length of the element*/
-  --ratioofwidthbylength: 0.35; /* give width to length ratio in css*/
+  --ToggleSwitchlength: 400px; /* give length of the element*/
+  --ratioofwidthbylength: 0.3; /* give width to length ratio in css*/
   /* Above two inputs are enough to change the element style */
   --toggleSwitchHeight: calc(
     var(--ratioofwidthbylength) * var(--ToggleSwitchlength)

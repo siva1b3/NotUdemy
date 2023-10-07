@@ -1,0 +1,11 @@
+.LogoChatHistory {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1%;
+  height: 75%;
+}
+
+.UserSettings {
+  height: 25%;
+}

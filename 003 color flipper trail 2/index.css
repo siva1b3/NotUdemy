@@ -1,6 +1,6 @@
-* {
+/* * {
   outline: 1px solid aquamarine;
-}
+} */
 
 body,
 .container-fluid,
@@ -21,17 +21,13 @@ body,
   justify-content: space-around;
 }
 
-button {
-  width: max-content;
-  height: 28px;
-}
-
-.btn-success {
-  display: inline;
-  flex: 1;
-}
-
-.button-block {
+.button-toggle-conatiner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  font-weight: bolder;
+  flex: 1;
 }

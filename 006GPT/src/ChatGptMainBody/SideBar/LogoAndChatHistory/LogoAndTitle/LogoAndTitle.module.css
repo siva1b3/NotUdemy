@@ -1,0 +1,21 @@
+.logo {
+  width: 15%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.title {
+  width: 85%;
+  text-align: start;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: xx-large;
+  padding-left: 3px;
+}
+
+.logo img {
+  max-width: 100%;
+}
